@@ -1,0 +1,6 @@
+- name: "Services"
+  hosts: [srv-ipv6]
+  become: true
+  tasks: 
+  - include: services.yaml  
+    tags: Apt_exporter

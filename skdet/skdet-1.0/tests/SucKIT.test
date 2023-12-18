@@ -1,0 +1,151 @@
+this data was collected with RedHat 7.2 (2.4.7-10) and SucKIT (version 1.3b)
+------------------------------------------------------------------------------
+
+clean sistem :
+--------------
+
+[root@localhost sk-1.3b]# ps ax
+  PID TTY      STAT   TIME COMMAND
+    1 ?        S      0:05 init
+    2 ?        SW     0:02 [keventd]
+    3 ?        SW     0:00 [kapm-idled]
+    4 ?        SWN    0:00 [ksoftirqd_CPU0]
+    5 ?        SW     0:00 [kswapd]
+    6 ?        SW     0:00 [kreclaimd]
+    7 ?        SW     0:00 [bdflush]
+    8 ?        SW     0:00 [kupdated]
+    9 ?        SW<    0:00 [mdrecoveryd]
+   80 ?        SW     0:00 [khubd]
+  478 ?        S      0:00 syslogd -m 0
+  483 ?        S      0:00 klogd -2
+  503 ?        S      0:00 portmap
+  531 ?        S      0:00 rpc.statd
+  644 ?        S      0:00 /usr/sbin/apmd -p 10 -w 5 -W -P /etc/sysconfig/apm-sc
+  700 ?        S      0:00 /usr/sbin/sshd 
+  733 ?        S      0:00 xinetd -stayalive -reuse -pidfile /var/run/xinetd.pid
+  774 ?        S      0:00 sendmail: accepting connections
+  793 ?        S      0:00 gpm -t ps/2 -m /dev/mouse
+  811 ?        S      0:00 crond
+  859 ?        S      0:00 /usr/sbin/atd
+  866 tty1     S      0:00 login -- root     
+  867 tty2     S      0:00 login -- root     
+  868 tty3     S      0:00 login -- root     
+  869 tty4     S      0:00 login -- root     
+  871 tty6     S      0:00 /sbin/mingetty tty6
+  872 tty7     S      0:00 /sbin/mingetty tty7
+  873 tty8     S      0:00 /sbin/mingetty tty8
+  874 tty9     S      0:00 /sbin/mingetty tty9
+  875 tty10    S      0:00 /sbin/mingetty tty10
+  881 tty1     S      0:00 -bash
+  927 tty2     S      0:00 -bash
+  977 tty1     S      0:02 /usr/bin/mc -P
+  978 ?        S      0:00 cons.saver /dev/tty1
+  979 pts/0    S      0:00 bash -rcfile .bashrc
+ 1073 tty3     S      0:00 -bash
+ 1129 tty11    S      0:00 /sbin/mingetty tty11
+ 1188 tty4     S      0:00 -bash
+ 2616 tty5     S      0:00 /sbin/mingetty tty5
+ 2620 tty4     R      0:00 ps ax
+
+loading suckit :
+----------------
+
+[root@localhost sk-1.3b]# ./sk
+/dev/null
+RK_Init: idt=0xc028f000, sct[]=0xc023e13c, kmalloc()=0xc012c180, gfp=0xf0
+Z_Init: Allocating kernel-code memory...Done, 12651 bytes, base=0xc2bf8000
+BD_Init: Starting backdoor daemon...Done, pid=2624
+                                          --------
+
+system with suckit installed :
+------------------------------
+
+[root@localhost sk-1.3b]# ps ax
+  PID TTY      STAT   TIME COMMAND
+    1 ?        S      0:05 init
+    2 ?        SW     0:02 [keventd]
+    3 ?        SW     0:00 [kapm-idled]
+    4 ?        SWN    0:00 [ksoftirqd_CPU0]
+    5 ?        SW     0:00 [kswapd]
+    6 ?        SW     0:00 [kreclaimd]
+    7 ?        SW     0:00 [bdflush]
+    8 ?        SW     0:00 [kupdated]
+    9 ?        SW<    0:00 [mdrecoveryd]
+   80 ?        SW     0:00 [khubd]
+  478 ?        S      0:00 syslogd -m 0
+  483 ?        S      0:00 klogd -2
+  503 ?        S      0:00 portmap
+  531 ?        S      0:00 rpc.statd
+  644 ?        S      0:00 /usr/sbin/apmd -p 10 -w 5 -W -P /etc/sysconfig/apm-sc
+  700 ?        S      0:00 /usr/sbin/sshd
+  733 ?        S      0:00 xinetd -stayalive -reuse -pidfile /var/run/xinetd.pid
+  774 ?        S      0:00 sendmail: accepting connections
+  793 ?        S      0:00 gpm -t ps/2 -m /dev/mouse
+  811 ?        S      0:00 crond
+  859 ?        S      0:00 /usr/sbin/atd
+  866 tty1     S      0:00 login -- root     
+  867 tty2     S      0:00 login -- root     
+  868 tty3     S      0:00 login -- root     
+  869 tty4     S      0:00 login -- root     
+  871 tty6     S      0:00 /sbin/mingetty tty6
+  872 tty7     S      0:00 /sbin/mingetty tty7
+  873 tty8     S      0:00 /sbin/mingetty tty8
+  874 tty9     S      0:00 /sbin/mingetty tty9
+  875 tty10    S      0:00 /sbin/mingetty tty10
+  881 tty1     S      0:00 -bash
+  927 tty2     S      0:00 -bash
+  977 tty1     S      0:02 /usr/bin/mc -P
+  978 ?        S      0:00 cons.saver /dev/tty1
+  979 pts/0    S      0:00 bash -rcfile .bashrc
+ 1073 tty3     S      0:00 -bash
+ 1129 tty11    S      0:00 /sbin/mingetty tty11
+ 1188 tty4     S      0:00 -bash
+ 2616 tty5     S      0:00 /sbin/mingetty tty5
+ 2632 tty4     R      0:00 ps ax
+
+skdet output :
+--------------
+
+[root@localhost skdet-0.7]# ./skdet -c 
+1	init
+2	keventd
+3	kapm-idled
+4	ksoftirqd_CPU0
+5	kswapd
+6	kreclaimd
+7	bdflush
+8	kupdated
+9	mdrecoveryd
+80	khubd
+478	syslogd
+483	klogd
+503	portmap
+531	rpc.statd
+644	apmd
+700	sshd
+733	xinetd
+774	sendmail
+793	gpm
+811	crond
+859	atd
+866	login
+867	login
+868	login
+869	login
+871	mingetty
+872	mingetty
+873	mingetty
+874	mingetty
+875	mingetty
+881	bash
+927	bash
+977	mc
+978	cons.saver
+979	bash
+1073	bash
+1129	mingetty
+1188	bash
+2616	mingetty
+2624	sk (*** this is the SucKIT daemon ***)
+----
+2637	skdet

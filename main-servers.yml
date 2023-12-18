@@ -1,0 +1,6 @@
+- name: "Ping"
+  hosts: [srv-ipv6]
+  become: true
+  tasks: 
+  - include: servers.yml  
+    tags: Servers

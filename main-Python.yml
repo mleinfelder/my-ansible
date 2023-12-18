@@ -1,0 +1,6 @@
+- name: "Python"
+  hosts: [srv-ipv6]
+  become: true
+  tasks: 
+  - include: python.yml  
+    tags: Pyhon 

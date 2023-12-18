@@ -1,0 +1,8 @@
+ - name: Aplicando mudança APT UPDATE !!
+   command: "{{item}}"
+   with_items:
+     - apt install python3-pip  -y  
+     - pip3 install html5lib bs4 
+     - mv /home/felder/verificador-sites.tar.gz /usr/local/sbin/
+     - cd /usr/local/sbin/ 
+     - /bin/tar -xvzf verificador-sites.tar.gz && chmod -R 755 verificador-sites && chown -R root: verificador-sites 

@@ -1,0 +1,46 @@
+Skdet is a simple program that will detect the following rootkits:
+  - SucKIT (<=1.3b)
+  - adore (all versions)
+  - adore-ng (all versions)
+  - UNFshit (<=1.1a)
+  - UNFkmem (from phrack.org)
+  - frontkey (first release)
+  - all rootkits that use trojaned files
+
+It's my first program so dont expect to much.
+
+Compilation:
+
+[root@tty5:~]# tar -jxf skdet-1.0.tar.bz2
+[root@tty5:~]# cd skdet-1.0
+[root@tty5:~/skdet-1.0]# make
+gcc -O2 -pipe -c src/det-rootkit.c -o det-rootkit.o
+gcc -O2 -pipe -c src/pid-info.c -o pid-info.o
+gcc -O2 -pipe -c src/scanner.c -o scanner.o
+gcc -O2 -pipe -c src/skdet.c -o skdet.o
+gcc -O2 -pipe -c src/usage.c -o usage.o
+gcc -O2 -pipe -c src/version.c -o version.o
+gcc -O2 -pipe det-rootkit.o pid-info.o scanner.o skdet.o usage.o version.o -o skdet
+[root@tty5:~/skdet-1.0]# ./skdet
+usage: ./skdet [options] <pid>
+options:
+  -c       - check for rootkits(SucKIT,adore,adore-ng...)
+  -p <pid> - show the status file for specified pid
+  -s       - scan localhost(show opened ports)
+  -v       - print the version of the program
+[root@tty5:~/skdet-1.0]#
+
+The program was tested on the following systems:
+
+Slackware 7.0 (2.2.13) SucKIT-1.3b
+Slackware 8.1 (2.4.18) SucKIT-1.3b, adore-0.53, adore-ng-0.24, t0rnkit, shv4
+Slackware 9.0 (2.4.20) adore-0.53, adore-ng-0.24
+Slackware 9.1 (2.4.22) adore-0.53, adore-ng-0.24, UNFshit-1.1a, UNFkmem
+RedHat 7.2 (2.4.7-10)  SucKIT-1.3b, adore-0.53, adore-ng-0.26, frontkey, shv4
+SuSE 7.0 (2.2.18)      SucKIT-1.3b, bobKIT, shv4, t0rnkit
+SuSE 7.1 (2.4.21)      SucKIT-1.3b
+Decebal 0.9 (2.6.10)   adore-ng-0.45
+
+For ideas or bugs mail to: <slider@decebal.org>
+
+Greets: trog, chonyid, xnull, maolina, signal (in no particular order)

@@ -1,0 +1,19 @@
+[srv-ipv6]
+xavier
+#strange
+#wolverine
+#shadowcat
+#sabretooth
+#hawkeye
+#bishop
+#vision
+#magneto
+#ironman
+#spiderman
+#blackwidow
+#hulk
+#captain
+#gambler
+#antman
+#rogue ansible_port=1022
+#beast ansible_port=1022

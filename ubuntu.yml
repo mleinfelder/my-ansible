@@ -1,0 +1,9 @@
+ - name: Aplicando mudança APT UPDATE !! 
+   command: "{{item}}"
+   with_items:
+     - apt update
+
+ - name: Aplicando mudança APT UPDATE !!
+   command: "{{item}}"
+   with_items:
+     - apt install python3-pip -y

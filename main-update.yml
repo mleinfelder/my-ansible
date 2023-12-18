@@ -1,0 +1,6 @@
+- name: "Ubuntu"
+  hosts: [srv-ipv6]
+  become: true
+  tasks: 
+  - include: update.yml  
+    tags: Ubuntu

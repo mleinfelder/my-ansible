@@ -1,0 +1,4 @@
+ - name: Corrigindo estrutura !! 
+   command: "{{item}}"
+   with_items:
+     - /usr/bin/python3 /usr/local/sbin/verificador-sites/verificador.py

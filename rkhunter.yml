@@ -1,0 +1,13 @@
+ - name: Instalando antiRootkit !! 
+   command: "{{item}}"
+   with_items:
+     - apt install rkhunter -y
+
+ - name: Copiando conf tkhunter !! 
+   copy: src=/home/felder/ansible/rkhunter.conf dest=/etc/rkhunter.conf
+ 
+ - name: Fazendo primeiro check RKHunter !!
+   command: "{{item}}"
+   with_items:
+     - sudo rkhunter --update --propupd
+     - sudo rkhunter --check --rwo

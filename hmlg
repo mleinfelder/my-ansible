@@ -1,0 +1,4 @@
+[srv-hmlg]
+2001:12ff:0:4145:f816:3eff:fed0:4fc8 #shadowcat
+#rogue ansible_port=1022
+#beast ansible_port=1022

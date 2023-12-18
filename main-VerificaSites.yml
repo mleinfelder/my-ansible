@@ -1,0 +1,6 @@
+- name: "VerificaSites"
+  hosts: [srv-ipv6]
+  become: true
+  tasks: 
+  - include: verifica-sites.yml  
+    tags: Verificar Sites

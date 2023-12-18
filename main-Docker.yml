@@ -1,0 +1,6 @@
+- name: "Docker"
+  hosts: [sysweb]
+  become: true
+  tasks: 
+  - include: docker.yml  
+    tags: Docker

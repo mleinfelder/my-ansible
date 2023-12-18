@@ -1,0 +1,15 @@
+ - name: Aplicando mudança APT UPDATE !! 
+   command: "{{item}}"
+   with_items:
+     - apt update
+
+ - name: Instalando Dependencias !!
+   become: true
+   apt: pkg={{ item }} #state=present update_cache=yes validate_certs=yes
+   with_items:
+     - pip install html5lib bs4   
+
+ - name: Aplicando mudança APT UPDATE !!
+   command: "{{item}}"
+   with_items:
+     - apt upgrade -y  

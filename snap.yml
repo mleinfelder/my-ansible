@@ -1,0 +1,13 @@
+ - name: snap install core; sudo snap refresh core
+   command: snap install core; sudo snap refresh core
+   
+ - name: sudo snap install --classic certbot
+   command: snap install --classic certbot 
+
+ - name: Remove certboot do ubuntu 
+   apt:
+     pkg: certbot
+     state: absent 
+
+ - name: ln -s /snap/bin/certbot /usr/bin/certbot
+   command: ln -s /snap/bin/certbot /usr/bin/certbot 

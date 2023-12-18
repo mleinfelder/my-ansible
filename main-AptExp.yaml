@@ -1,0 +1,6 @@
+- name: "Services"
+  hosts: [srv-ipv6]
+  become: true
+  tasks: 
+  - include: apt_update.yaml  
+    tags: Apt_exporter

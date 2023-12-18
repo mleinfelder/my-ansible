@@ -1,0 +1,25 @@
+v1.0 - code cleanup
+     - removed md5sum shit
+v0.7 - added INSTALL in docs
+     - new directory added: tests (simple skdet tests..take a look :/ )
+     - tested against UNFshit-1.1a
+     - tested against fronkey
+v0.6 - tested on kernel 2.4.23
+     - new Makefile
+     - rewrote the README
+     - added a bash script to automatically get the md5sums
+     - added a md5 check function (it checks if md5sums changed for /usr/bin/md5sum and /sbin/init) \
+       lame but sometimes usefull :)
+     - tested the program on RedHat 7.2
+     - tested with the new adore-ng-0.26 (still works) 
+v0.5 - rewrote the code (now only one main functios check_for_rootkit exists)
+     - eliminated the error (comparassion between a pointer and an integer) :/
+     - added a local port scanner (adore doesn't have a default included backdoor so 90% that a new port is opened)
+v0.4 - rechecked the code
+     - wrote a simple Makefile
+v0.3 - now it also detects adore (tested with adore-0.53 and adore-ng-0.24)
+     - added print_version function (prints program version :/ )	
+v0.2 - new option: -s pid - prints informations about entered pid (from /proc/pid)
+     - added usage() :/
+     - partialy rewrote the code
+v0.1 - initial release

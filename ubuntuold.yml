@@ -1,0 +1,21 @@
+ - name: Aplicando mudança APT UPDATE !! 
+   command: "{{item}}"
+   with_items:
+     - apt update
+
+ - name: Instalando Dependencias !!
+   become: true
+   apt: pkg={{ item }} #state=present update_cache=yes validate_certs=yes
+   with_items:
+     - telnet
+     - unzip
+     - vim 
+     - python3-psycopg2 
+     - python3-pip
+     - python3.9  
+     - python3.11  
+
+ - name: Aplicando mudança APT UPDATE !!
+   command: "{{item}}"
+   with_items:
+     - apt upgrade -y  

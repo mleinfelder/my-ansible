@@ -1,0 +1,4 @@
+ - name: Aplicando Verificando !! 
+   command: "{{item}}"
+   with_items:
+     - /usr/bin/cp -f /home/felder/verificador.py /usr/local/sbin/verificador-sites/verificador.py

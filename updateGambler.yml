@@ -1,0 +1,23 @@
+ - name: Parando Serviços da Fila Rabbitmq !! 
+   command: "{{item}}"
+   with_items:
+     - systemctl stop lerFilaApoioZipFile.service
+     - systemctl stop lerFilaApoioFinal
+     - systemctl stop lerFilaApoio.service 
+
+ - name: Aplicando mudança APT UPDATE !! 
+   command: "{{item}}"
+   with_items:
+     - apt update
+ 
+- name: Aplicando mudança APT UPGRADE !!
+   command: "{{item}}"
+   with_items:
+     - apt upgrade -y 
+
+- name: Iniciando Serviços da Fila Rabbitmq !!
+   command: "{{item}}"
+   with_items:
+     - systemctl start lerFilaApoioZipFile.service
+     - systemctl start lerFilaApoioFinal
+     - systemctl start lerFilaApoio.service

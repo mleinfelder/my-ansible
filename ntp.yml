@@ -1,0 +1,25 @@
+ - name: Aplicando mudança APT UPDATE !! 
+   command: "{{item}}"
+   with_items:
+     - apt update
+
+ - name: ntp install ntpsec
+   command: apt install ntpsec -y
+   
+ - name: touch /var/lib/ntpsec/ntp.drift 
+   command: touch /var/lib/ntpsec/ntp.drift 
+
+ - name: Config ntp.conf 
+   command: cp /home/felder/ntp.conf /etc/ntpsec/ntp.conf
+
+ - name: Restart ntpsec 
+   command: systemctl status ntpsec.service
+
+ - name: NTP -c rl  
+   command: /usr/bin/ntpq -c rl; /usr/bin/ntpq -p
+ 
+ - name:  /usr/bin/timedatectl 
+   command: /usr/bin/timedatectl
+
+ - name: Date 
+   command: /usr/bin/date 

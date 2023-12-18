@@ -1,0 +1,6 @@
+- name: "Rkhunter"
+  hosts: [sysweb]
+  become: true
+  tasks: 
+  - include: rkhunter.yml 
+    tags: Rkhunter

@@ -1,0 +1,42 @@
+ - name: Aplicando mudança APT UPDATE !! 
+   command: "{{item}}"
+   with_items:
+     - apt-get update
+
+ - name: Instalando Requisitos !!
+   command: "{{item}}"
+   with_items:
+     - apt-get install debian-goodies -y 
+     - apt-get install python3-pip -y 
+     - pip3 install flask  
+     - pip3 install schedule  
+
+ - name: Copiando conf tkhunter !! 
+   copy: src=/home/felder/apt_exporter.tar.gz dest=/home/felder/apt_exporter.tar.gz
+
+ - name: Descompactando !! 
+   command: "{{item}}"
+   with_items:
+     - tar -xvf apt_exporter.tar.gz
+
+#- name: Clone Repositorio apt !! ansible.tar.gz
+#   command: "{{item}}"
+#   with_items:
+#     - git clone git@github.com:mleinfelder/apt_exporter.git
+
+ - name: Copiando apt para caminhos corretos !! 
+   command: "{{item}}"
+   with_items:
+     - cp /home/felder/apt_exporter/apt_exporter.py /usr/local/bin/     
+     - cp /home/felder/apt_exporter/apt_exporter.service  /etc/systemd/system/
+
+ - name: Start aptExporter!! 
+   command: "{{item}}"
+   with_items:
+     - systemctl daemon-reload      
+     - systemctl start apt_exporter.service
+ 
+ - name: Instalando pip !!
+   command: "{{item}}"
+   with_items:
+      - curl http://127.0.0.1:3999/metrics

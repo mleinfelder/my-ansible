@@ -1,0 +1,21 @@
+ - name: Parando Serviços da Fila Rabbitmq !! 
+   command: "{{item}}"
+   with_items:
+     - systemctl stop lerFilaEnvio.service
+     - systemctl stop lerFilaVer.service
+
+ - name: Aplicando mudança APT UPDATE !! 
+   command: "{{item}}"
+   with_items:
+     - apt update
+ 
+- name: Aplicando mudança APT UPGRADE !!
+   command: "{{item}}"
+   with_items:
+     - apt upgrade -y 
+
+- name: Iniciando Serviços da Fila Rabbitmq !!
+   command: "{{item}}"
+   with_items:
+     - systemctl start lerFilaVer.service
+     - systemctl start lerFilaEnvio.service

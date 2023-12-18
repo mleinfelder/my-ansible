@@ -1,0 +1,18 @@
+ - name: Instalando PIP Schedule !! 
+   command: "{{item}}"
+   with_items:
+     -  pip3 install schedule
+
+ - name: Copiando apt_exporter !! 
+   copy: src=/home/felder/apt_exporter.py dest=/usr/local/bin/
+ 
+ - name: Reiniciando Serviço apt_exporter !!
+   command: "{{item}}"
+   with_items:
+     - sudo systemctl stop apt_exporter.service
+     - sudo systemctl start apt_exporter.service
+
+ - name: Instalando pip !!
+   command: "{{item}}"
+   with_items:
+      - curl http://127.0.0.1:3999/metrics

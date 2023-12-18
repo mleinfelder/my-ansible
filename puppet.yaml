@@ -1,0 +1,9 @@
+ - name: Aplicando mudança APT UPDATE !! 
+   command: "{{item}}"
+   with_items:
+     - apt update
+
+ - name: Instalando puppet !!
+   command: "{{item}}"
+   with_items:
+     - apt install puppet -y
